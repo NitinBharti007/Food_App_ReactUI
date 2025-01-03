@@ -8,7 +8,8 @@ import {
   FaSearch,
   FaInfoCircle,
 } from "react-icons/fa";
-import logo from "../assets/logo.png";
+import logo from "../assets/logoUttara.png";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -38,30 +39,18 @@ const Navbar = () => {
 
         {/* Desktop Menu */}
         <div className="hidden md:flex items-center space-x-8 text-white font-semibold text-lg">
-          <a
-            href="#home"
-            className="flex items-center hover:text-yellow-400 transition"
-          >
+          <Link to="/" className="flex items-center hover:text-yellow-400 transition">
             <FaHome className="mr-2" /> Home
-          </a>
-          <a
-            href="#menu"
-            className="flex items-center hover:text-yellow-400 transition"
-          >
+          </Link>
+          <Link to="/menu" className="flex items-center hover:text-yellow-400 transition">
             <FaUtensils className="mr-2" /> Menu
-          </a>
-          <a
-            href="#deals"
-            className="flex items-center hover:text-yellow-400 transition"
-          >
+          </Link>
+          <Link to="/about" className="flex items-center hover:text-yellow-400 transition">
             <FaInfoCircle className="mr-2" /> About
-          </a>
-          <a
-            href="#contact"
-            className="flex items-center hover:text-yellow-400 transition"
-          >
+          </Link>
+          <Link to="/contact" className="flex items-center hover:text-yellow-400 transition">
             <FaPhoneAlt className="mr-2" /> Contact
-          </a>
+          </Link>
         </div>
 
         {/* Mobile Menu Toggle (Hamburger Icon) */}
@@ -86,49 +75,46 @@ const Navbar = () => {
           {/* Close Button */}
           <div className="flex justify-between items-center mb-8">
             <img src={logo} alt="Logo" className="w-20 h-auto" />
-            <FaTimes
-              className="text-3xl cursor-pointer text-white"
-              onClick={toggleDrawer}
-            />
+            <FaTimes className="text-3xl cursor-pointer text-white" onClick={toggleDrawer} />
           </div>
 
           {/* Mobile Menu Items */}
           <ul className="space-y-6">
             <li>
-              <a
-                href="#home"
+              <Link
+                to="/"
                 className="flex items-center text-white text-lg hover:text-yellow-400 transition"
                 onClick={toggleDrawer}
               >
                 <FaHome className="mr-2" /> Home
-              </a>
+              </Link>
             </li>
             <li>
-              <a
-                href="#menu"
+              <Link
+                to="/menu"
                 className="flex items-center text-white text-lg hover:text-yellow-400 transition"
                 onClick={toggleDrawer}
               >
                 <FaUtensils className="mr-2" /> Menu
-              </a>
+              </Link>
             </li>
             <li>
-              <a
-                href="#deals"
+              <Link
+                to="/about"
                 className="flex items-center text-white text-lg hover:text-yellow-400 transition"
                 onClick={toggleDrawer}
               >
                 <FaInfoCircle className="mr-2" /> About
-              </a>
+              </Link>
             </li>
             <li>
-              <a
-                href="#contact"
+              <Link
+                to="/contact"
                 className="flex items-center text-white text-lg hover:text-yellow-400 transition"
                 onClick={toggleDrawer}
               >
                 <FaPhoneAlt className="mr-2" /> Contact
-              </a>
+              </Link>
             </li>
           </ul>
         </div>
