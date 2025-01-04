@@ -15,96 +15,118 @@ const Footer = () => {
       setIsSubmitted(true);
       setEmail("");
     }
+    if (email) {
+      setIsSubmitted(true);
+      setTimeout(() => setIsSubmitted(false), 5000);
+      setEmail("");
+    }
   };
 
   return (
-    <footer className="bg-gradient-to-r from-gray-800 to-gray-900 text-white py-16">
-      <div className="max-w-screen-xl mx-auto px-6 lg:px-12">
-        {/* Top Section: Newsletter and Quick Links */}
-        <div className="grid lg:grid-cols-3 gap-12 text-center lg:text-left">
-          {/* Left Column: Newsletter Subscription */}
-          <div className="space-y-6">
-            <h3 className="text-4xl font-bold mb-4 text-yellow-400">Stay in Touch</h3>
-            <p className="text-lg text-gray-300">
-              Join our newsletter for exciting updates, news, and exclusive offers directly to your inbox.
+    <footer className="bg-gradient-to-br from-gray-900 via-gray-800 to-black text-white py-10 md:py-20">
+      <div className="max-w-screen-2xl mx-auto px-4 sm:px-8 lg:px-16">
+        {/* Top Section */}
+        <div className="grid gap-12 md:gap-16 md:grid-cols-2 lg:grid-cols-3">
+          {/* Newsletter Subscription */}
+          <div className="space-y-6 md:space-y-8">
+            <h3 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-yellow-400">
+              Stay Connected
+            </h3>
+            <p className="text-base sm:text-lg text-gray-400 leading-relaxed">
+              Subscribe to our newsletter and stay updated with the latest
+              trends, offers, and news directly in your inbox.
             </p>
-
-            {/* Newsletter Form without gap */}
-            <form onSubmit={handleFormSubmit} className="flex justify-center items-center mb-6 space-x-0">
+            <form
+              onSubmit={handleFormSubmit}
+              className="flex flex-col sm:flex-row items-center max-w-lg mx-auto md:mx-0 space-y-4 sm:space-y-0 sm:space-x-4"
+            >
               <input
                 type="email"
                 value={email}
                 onChange={handleEmailChange}
                 placeholder="Enter your email"
-                className="w-full sm:w-80 py-3 px-6 rounded-l-full text-gray-800 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-yellow-500 transition-all duration-300"
+                className="flex-grow w-full py-3 px-4 rounded-full text-gray-800 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-yellow-500"
                 required
               />
               <button
                 type="submit"
-                className="bg-yellow-500 text-gray-800 py-3 px-8 rounded-r-full hover:bg-yellow-600 transition-all duration-300 transform hover:scale-105"
+                className="w-full sm:w-auto bg-yellow-500 text-gray-900 font-bold px-6 py-3 rounded-full hover:bg-yellow-600 transition-transform duration-300 transform hover:scale-105"
               >
                 Subscribe
               </button>
             </form>
-
-            {/* Success Message */}
             {isSubmitted && (
-              <p className="text-lg text-green-500 font-semibold animate__animated animate__fadeIn">
-                Thank you for subscribing! We're excited to keep you updated.
+              <p className="text-lg text-green-500 font-medium animate-bounce mt-4 text-center md:text-left">
+                Thank you for subscribing!
               </p>
             )}
           </div>
 
-          {/* Center Column: Quick Links */}
-          <div className="space-y-6">
-            <h3 className="text-4xl font-bold mb-4 text-yellow-400">Quick Links</h3>
-            <ul className="space-y-4 text-gray-300">
-              <li><a href="#home" className="hover:text-yellow-500 transition-colors duration-300">Home</a></li>
-              <li><a href="#about" className="hover:text-yellow-500 transition-colors duration-300">About Us</a></li>
-              <li><a href="#services" className="hover:text-yellow-500 transition-colors duration-300">Services</a></li>
-              <li><a href="#contact" className="hover:text-yellow-500 transition-colors duration-300">Contact</a></li>
+          {/* Quick Links */}
+          <div className="space-y-6 md:space-y-8">
+            <h3 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-yellow-400">
+              Quick Links
+            </h3>
+            <ul className="space-y-4">
+              {["Home", "About Us", "Services", "Contact"].map(
+                (link, index) => (
+                  <li key={index}>
+                    <a
+                      href={`#${link.toLowerCase().replace(" ", "")}`}
+                      className="text-base sm:text-lg text-gray-400 hover:text-yellow-400 transition-colors duration-300"
+                    >
+                      {link}
+                    </a>
+                  </li>
+                )
+              )}
             </ul>
           </div>
 
-          {/* Right Column: Social Media Icons */}
-          <div className="space-y-6">
-            <h3 className="text-4xl font-bold mb-4 text-yellow-400">Follow Us</h3>
-            <div className="flex justify-center lg:justify-start gap-8">
-              {/* Social Media Icons */}
-              <a
-                href="https://facebook.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="transition-transform duration-300 transform hover:scale-110"
-              >
-                <i className="fab fa-facebook-f text-4xl hover:text-yellow-500"></i>
-              </a>
-              <a
-                href="https://twitter.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="transition-transform duration-300 transform hover:scale-110"
-              >
-                <i className="fab fa-twitter text-4xl hover:text-yellow-500"></i>
-              </a>
-              <a
-                href="https://instagram.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="transition-transform duration-300 transform hover:scale-110"
-              >
-                <i className="fab fa-instagram text-4xl hover:text-yellow-500"></i>
-              </a>
+          {/* Contact Information */}
+          <div className="space-y-6 md:space-y-8">
+            <h3 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-yellow-400">
+              Contact Us
+            </h3>
+            <p className="text-base sm:text-lg text-gray-400 leading-relaxed">
+              Plot No. 19, Gyan Khand II, Indirapuram, Ghaziabad, Uttar Pradesh
+              201014
+            </p>
+            <p className="text-lg font-bold text-yellow-400">+91-9310002081</p>
+            <div className="flex space-x-4 sm:space-x-6">
+              {[
+                { href: "https://facebook.com", icon: "facebook-f" },
+                { href: "https://youtube.com", icon: "youtube" },
+                { href: "https://instagram.com", icon: "instagram" },
+                { href: "https://linkedin.com", icon: "linkedin-in" },
+              ].map(({ href, icon }, index) => (
+                <a
+                  key={index}
+                  href={href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-2xl sm:text-3xl text-gray-400 hover:text-yellow-500 transition-transform duration-300 transform hover:scale-125"
+                >
+                  <i className={`fab fa-${icon}`}></i>
+                </a>
+              ))}
             </div>
           </div>
         </div>
 
-        {/* Bottom Section: Copyright and Legal Links */}
-        <div className="text-center mt-12 text-sm text-gray-400">
-          <p>&copy; 2024 Your Company. All Rights Reserved.</p>
-          <div className="mt-4">
-            <a href="#privacy" className="hover:text-yellow-500 mx-3 transition-colors duration-300">Privacy Policy</a>
-            <a href="#terms" className="hover:text-yellow-500 mx-3 transition-colors duration-300">Terms of Service</a>
+        {/* Bottom Section */}
+        <div className="border-t border-gray-700 mt-12 pt-6 text-center text-sm text-gray-500">
+          <p>&copy; 2025 उत्तराखंडी रस्याण. All rights reserved.</p>
+          <div className="mt-4 flex justify-center space-x-6">
+            {["Privacy Policy", "Terms of Service"].map((text, index) => (
+              <a
+                key={index}
+                href={`#${text.toLowerCase().replace(" ", "")}`}
+                className="hover:text-yellow-500 transition-colors duration-300"
+              >
+                {text}
+              </a>
+            ))}
           </div>
         </div>
       </div>
