@@ -18,8 +18,7 @@ const Platforms = () => {
               className="w-32 h-32 object-contain mx-auto"
             />
             <p className="text-xl font-semibold text-gray-700 mt-4">Zomato</p>
-            <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center rounded-xl">
-              <span className="text-white text-2xl font-bold">Coming Soon</span>
+            <div className="absolute flex items-center justify-center rounded-xl">
             </div>
           </div>
 
@@ -31,8 +30,7 @@ const Platforms = () => {
               className="w-32 h-32 object-contain mx-auto"
             />
             <p className="text-xl font-semibold text-gray-700 mt-4">Swiggy</p>
-            <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center rounded-xl">
-              <span className="text-white text-2xl font-bold">Coming Soon</span>
+            <div className="absolute flex items-center justify-center rounded-xl">
             </div>
           </div>
         </div>
