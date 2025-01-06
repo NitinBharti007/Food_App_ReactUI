@@ -1,0 +1,31 @@
+/* WhatsApp Button Styles */
+.whatsapp-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    background-color: #25d366;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 0 8px #25d366, 0 0 15px #25d366;
+    animation: subtle-glow 2s infinite alternate;
+    transition: transform 0.2s ease-in-out;
+  }
+  
+  .whatsapp-button:hover {
+    transform: scale(1.1);
+  }
+  
+  /* Glow Animation */
+  @keyframes subtle-glow {
+    0% {
+      box-shadow: 0 0 8px #25d366, 0 0 15px #25d366;
+    }
+    100% {
+      box-shadow: 0 0 12px #25d366, 0 0 20px #25d366;
+    }
+  }
+  

@@ -1,3 +1,49 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import "@fortawesome/fontawesome-free/css/all.min.css";
+
+/* Glowing Ring Effect */
+.whatsapp-button {
+    position: relative;
+    animation: pulse 2s infinite;
+  }
+  
+  .whatsapp-button::before {
+    content: '';
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    right: -5px;
+    bottom: -5px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(0, 255, 0, 0.4), transparent);
+    animation: glow 1.5s infinite alternate;
+    z-index: -1;
+  }
+  
+  /* Pulse Animation */
+  @keyframes pulse {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.1);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+  
+  /* Glow Animation */
+  @keyframes glow {
+    0% {
+      opacity: 0.8;
+      box-shadow: 0 0 10px 5px rgba(72, 187, 120, 0.5);
+    }
+    100% {
+      opacity: 0;
+      box-shadow: 0 0 20px 10px rgba(72, 187, 120, 0);
+    }
+  }
+  
